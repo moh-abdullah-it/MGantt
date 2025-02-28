@@ -316,6 +316,35 @@ export function useGanttTimeline(startDate: Date, endDate: Date) {
         currentViewMode.value = mode;
     };
 
+    // إضافة دالة لحساب نمط مقابض تغيير الحجم
+    const getResizeHandleStyle = (position: 'left' | 'right') => {
+        return {
+            position: 'absolute',
+            top: '0',
+            [position]: '0',
+            width: '8px',
+            height: '100%',
+            cursor: 'ew-resize',
+            opacity: 0.7, // شفافية جزئية لتحسين المظهر
+        };
+    };
+
+// تحديث أو إضافة دالة لحساب موضع تاريخ معين على الخط الزمني
+    const getDatePosition = (date: Date) => {
+        const diffDays = Math.floor(
+            (date.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
+        );
+        return diffDays * pixelsPerDay.value;
+    };
+
+// تحديث أو إضافة دالة لحساب التاريخ من موضع معين على الخط الزمني
+    const getDateFromPosition = (position: number) => {
+        const diffDays = Math.round(position / pixelsPerDay.value);
+        const date = new Date(startDate);
+        date.setDate(date.getDate() + diffDays);
+        return date;
+    };
+
     return {
         pixelsPerDay,
         timelineDuration,
@@ -326,6 +355,9 @@ export function useGanttTimeline(startDate: Date, endDate: Date) {
         getTaskBarStyle,
         zoomIn,
         zoomOut,
-        setViewMode
+        setViewMode,
+        getResizeHandleStyle,
+        getDatePosition,
+        getDateFromPosition
     };
 }

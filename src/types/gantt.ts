@@ -12,6 +12,7 @@ export interface GanttTask {
     predecessors?: GanttDependency[];
     indentation?: number;
     expanded?: boolean;
+    resizable?: boolean;
 }
 
 export interface GanttDependency {
@@ -37,4 +38,12 @@ export interface GanttCalendarException {
     date: Date;
     isWorking: boolean;
     workingHours?: { from: string; to: string }[];
+}
+
+export interface TaskResizeEvent {
+    task: GanttTask;
+    edge: 'start' | 'end'; // الحافة التي يتم سحبها (البداية أو النهاية)
+    originalDate: Date; // التاريخ الأصلي قبل التغيير
+    newDate: Date; // التاريخ الجديد بعد التغيير
+    final: boolean; // ما إذا كان هذا هو التغيير النهائي (عند الإفلات) أم تحديث مؤقت أثناء السحب
 }
