@@ -1,0 +1,21 @@
+{
+  "toolbar": {
+    "zoomIn": "تكبير",
+    "zoomOut": "تصغير",
+    "viewMode": "عرض",
+    "day": "يومي",
+    "week": "أسبوعي",
+    "month": "شهري",
+    "year": "سنوي",
+    "tasksCount": "{count} مهمة",
+    "darkMode": "الوضع الداكن",
+    "lightMode": "الوضع الفاتح"
+  },
+  "grid": {
+    "taskName": "اسم المهمة"
+  },
+  "status": {
+    "loading": "جار التحميل...",
+    "noTasks": "لا توجد مهام"
+  }
+}

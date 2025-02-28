@@ -1,0 +1,21 @@
+{
+  "toolbar": {
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "viewMode": "View Mode",
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "year": "Year",
+    "tasksCount": "{count} tasks",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
+  },
+  "grid": {
+    "taskName": "Task Name"
+  },
+  "status": {
+    "loading": "Loading...",
+    "noTasks": "No tasks available"
+  }
+}
